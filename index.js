@@ -19,7 +19,11 @@ app.listen(port, () => {
 
 const url = "http://www.meteoromania.ro/images/clima/SZA_orar_interpolat.png"
 
-var j = schedule.scheduleJob('30 0,6,12,18 * * *',
+var k = schedule.scheduleJob('0 5,25,45 * * * *', async function kfunc() {
+    await fetch('https://ro-snow-layer.herokuapp.com/');
+});
+
+var j = schedule.scheduleJob('0 30 0,6,12,18 * * *',
     async function download() {
 
         const date_ob = new Date();

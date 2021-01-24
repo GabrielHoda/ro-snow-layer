@@ -2,11 +2,13 @@ const fetch = require('node-fetch');
 const env = require('dotenv');
 const schedule = require('node-schedule');
 
+env.config();
+
 const url = "http://www.meteoromania.ro/images/clima/SZA_orar_interpolat.png"
 
-var j = schedule.scheduleJob('*/15 * * * * *',
+var j = schedule.scheduleJob(process.env.SCHEDULE_TIME,
     async function download() {
-        env.config();
+
         const date_ob = new Date();
         const currentDate = date_ob.toString().slice(4, 24);
         const response = await fetch(url);

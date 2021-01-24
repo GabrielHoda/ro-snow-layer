@@ -18,7 +18,7 @@ app.listen(port, () => {
 
 const url = "http://www.meteoromania.ro/images/clima/SZA_orar_interpolat.png"
 
-var j = schedule.scheduleJob(process.env.SCHEDULE_TIME,
+var j = schedule.scheduleJob('0 */2 * * * *',
     async function download() {
 
         const date_ob = new Date();

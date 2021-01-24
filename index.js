@@ -1,8 +1,20 @@
 const fetch = require('node-fetch');
 const env = require('dotenv');
 const schedule = require('node-schedule');
+const express = require('express')
+const app = express()
+const port = 3000
 
 env.config();
+
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+})
+
+app.listen(port, () => {
+    console.log(`Example app listening at http://localhost:${port}`)
+})
+
 
 const url = "http://www.meteoromania.ro/images/clima/SZA_orar_interpolat.png"
 

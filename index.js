@@ -3,7 +3,8 @@ const env = require('dotenv');
 const schedule = require('node-schedule');
 const express = require('express')
 const app = express()
-const port = 3000
+const port = process.env.PORT || 5000
+
 
 env.config();
 
